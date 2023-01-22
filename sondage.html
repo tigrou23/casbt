@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page de sondage</title>
+        <link rel="stylesheet" href="css/form1.css">
+        <link rel="stylesheet" href="css/form2.css">
+        <link rel="stylesheet" href="css/resultat.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        
+
+
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+                
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <div class="main">
+                <div class="header">
+                    <img src="image/logoSeul.png" alt="logo" id="logo">
+                </div>
+                <form id="form1" onsubmit="return false;">
+                    <div class="formulaire">
+                        <div class="container">
+                            <input type="text" name="Nom" value="" placeholder="Nom" class="champs" id="nom" autocomplete="on" autocapitalize="sentences" autofocus required>
+                            <input type="text" name="Prenom" value="" placeholder="Prénom" class="champs" id="prenom" autocomplete="on" autocapitalize="sentences" required>
+                        </div>
+                        <div class="container">
+                            <input type="date" name="Date" class="champs" id="date" required>
+                            <input type="tel" name="Tel" value="" placeholder="Téléphone" class="champs" id="tel" autocomplete="on" required>
+                        </div>
+                        <div class="container">
+                            <input type="number" name="Num" value="" placeholder="N°" class="champs" id="num" required>
+                            <input type="text" name="Rue" value="" placeholder="Rue" class="champs" id="rue" autocomplete="on" autocapitalize="sentences" required>
+                        </div>
+                        <div class="container">
+                            <input type="number" name="CP" value="" placeholder="Code Postal" class="champs" id="cp" minlength="4" maxlength="8"size="10" required>
+                            <input type="text" name="Ville" value="" placeholder="Ville" class="champs" id="ville" autocomplete="on" autocapitalize="sentences" required>
+                        </div>
+                        <div class="container action">
+                            <input type="submit" class="button" id="submit" value="Continuer">
+                            <input type="reset" class="button" id="reset">
+                        </div>
+                    </div>
+                </form>
+                <form id="form2" onsubmit="return false;">
+                    <progress id="progress_bar" max="10" value="1"></progress>
+                    <div class="formulaire">
+                        <div class="container">
+                            <h2>Aliment 1</h2>
+                            <label for="groupe">Groupe</label>
+                            <select name="groupe" class="champs" id="groupe" required>
+                                <option value="">-- Choisir un groupe --</option>
+                            </select>
+                            <br>
+                            <label for="sous_groupe">Sous-Groupe</label>
+                            <select name="sous_groupe" class="champs" id="sous_groupe" disabled required>
+                                <option value="">-- Choisir un sous-groupe --</option>
+                            </select>
+                            <br>
+                            <label for="aliment">Aliment</label>
+                            <select name="aliment" class="champs" id="aliment" disabled required>
+                                <option value="">-- Choisir un aliment --</option>
+                            </select>
+                            <div id="msg"><p>Aliment déjà selectionné</p></div>
+                        </div>
+                    </div>
+                    <div class="container_btn">
+                        <button id="precedent">< Précedent</button>
+                        <br>
+                        <button id="suivant" type="submit">Suivant ></button>
+                    </div>
+                </form>
+                <div id="resultat" style="color:azure" hidden>
+                    <div id="container">
+                        <h1>Merci</h1>d'avoir répondu au sondage !
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer></footer>
+        <script type="text/javascript" src="js/form1.js"></script>
+        <script type="text/javascript" src="js/form2.js"></script>
+        <script type="text/javascript" src="js/transition.js"></script>
+    </body>
+</html>

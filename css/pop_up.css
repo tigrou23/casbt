@@ -1,0 +1,173 @@
+.bobox {
+  background-image: url("../image/fruits-legumes-saison-1024x683.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5	rem auto;
+  padding: 2.5rem;
+  border: 2px solid #ddd;
+  border-radius: 10px/10px;
+  margin-bottom: 50px;
+}
+
+a.button {
+  width: 25%;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: #fff;
+  border: 2px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background-color: #006400; /* couleur de fond néon plus foncé */
+  box-shadow: 0 0 5px #006400, 0 0 10px #006400, 0 0 15px #006400, 0 0 20px #006400, 0 0 25px #006400, 0 0 30px #006400, 0 0 40px #006400, 0 0 50px #006400; /* ajout de l'effet de lueur néon avec une luminosité réduite*/
+  color: #fff; /* couleur de texte */
+  text-shadow: 0 0 2px #006400; /* ajout de l'effet de lueur néon au texte avec une luminosité réduite */
+  font-size: 1.5rem; /* augmentation de la taille de police */
+  padding: 1rem 2rem; /* augmentation de la taille du bouton */
+  border: none; 
+}
+a.button:hover {
+  background-color: #fff;
+  color: #006400;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  transition: opacity .2s;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup {
+  background: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 2rem;
+  border-radius: 25px;
+  transition: all 0.4s ease-in-out;
+
+
+}
+
+
+/*.popup {
+  z-index: 9999;
+  width: 80%;
+  height: 80%;
+  max-width: 800px;
+  max-height: 400px;
+  z-index: 9999;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 25px;
+  width: 35%;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}*/
+.popup .cross {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  color: #333;
+}
+.popup .cross:hover {
+  color: #01DF3A;
+}
+
+#qr-code {
+  display: flex;
+  align-items: center;
+}
+#qr-code img {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+}
+#qr-code p {
+  font-size: 18px;
+  line-height: 1.5;
+  flex: 1;
+}
+#qr-code hr {
+  border: none;
+  border-left: 1px solid #ddd;
+  height: 100%;
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 90%;
+    height: 90%;
+    max-width: none;
+    max-height: 400px;
+  }
+}
+
+
+
+                                                     /* CSS */
+                                                   .button-55 {
+                                                     align-self: center;
+                                                     background-color: #fff;
+                                                     background-image: none;
+                                                     background-position: 0 90%;
+                                                     background-repeat: repeat no-repeat;
+                                                     background-size: 4px 3px;
+                                                     border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+                                                     border-style: solid;
+                                                     border-width: 2px;
+                                                     box-shadow: rgba(0, 0, 0, .2) 15px 28px 5px -10px;
+                                                     box-sizing: border-box;
+                                                     color: #41403e;
+                                                     cursor: pointer;
+                                                     display: inline-block;
+                                                     font-family: Neucha, sans-serif;
+                                                     font-size: 1rem;
+                                                     line-height: 23px;
+                                                     outline: none;
+                                                     padding: .75rem;
+                                                     text-decoration: none;
+                                                     transition: all 235ms ease-in-out;
+                                                     border-bottom-left-radius: 15px 255px;
+                                                     border-bottom-right-radius: 225px 15px;
+                                                     border-top-left-radius: 255px 15px;
+                                                     border-top-right-radius: 15px 225px;
+                                                     user-select: none;
+                                                     -webkit-user-select: none;
+                                                     touch-action: manipulation;
+                                                   }
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}

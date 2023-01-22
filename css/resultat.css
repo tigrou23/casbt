@@ -1,0 +1,11 @@
+#resultat{
+    text-align: center;
+}
+
+#container{
+    max-height: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

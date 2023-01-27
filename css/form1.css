@@ -31,11 +31,7 @@
     left:0px;
     height: 15px;
 }
-body{
-    background-color: var(--background-body);
-    background-image: url("../image/fruits-legumes-saison-1024x683.jpg");
-    background-size: cover;
-}
+
 
 #logo{
     height: 100px;

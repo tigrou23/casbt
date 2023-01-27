@@ -31,7 +31,6 @@ function suivant(){
                     console.log("Connexion réussie avec Personne")
                 },
                 complete: function(){
-
                      $.ajax({
                          url: "https://hugopereira.pythonanywhere.com/getPersonne/" + tel + "/",
                          dataType: "json",
@@ -41,8 +40,6 @@ function suivant(){
                              envoieSondage(ID);
                          }
                      })
-
-
                 },
                 type: 'POST'
             })

@@ -1,3 +1,7 @@
+.opaque {
+  opacity: 0.5;
+}
+
 .bobox {
   background-image: url("../image/fruits-legumes-saison-1024x683.jpg");
   background-size: cover;
@@ -13,28 +17,6 @@
   margin-bottom: 50px;
 }
 
-a.button {
-  width: 25%;
-  height: 13%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.3rem;
-  padding: 1rem;
-  color: #fff;
-  border: 2px;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-  background-color: #006400; /* couleur de fond néon plus foncé */
-  box-shadow: 0 0 5px #006400, 0 0 10px #006400, 0 0 15px #006400, 0 0 20px #006400, 0 0 25px #006400, 0 0 30px #006400, 0 0 40px #006400, 0 0 50px #006400; /* ajout de l'effet de lueur néon avec une luminosité réduite*/
-  color: #fff; /* couleur de texte */
-  text-shadow: 0 0 2px #006400; /* ajout de l'effet de lueur néon au texte avec une luminosité réduite */
-  font-size: 1.5rem; /* augmentation de la taille de police */
-  padding: 1rem 2rem; /* augmentation de la taille du bouton */
-  border: none; 
-}
 a.button:hover {
   background-color: #fff;
   color: #006400;

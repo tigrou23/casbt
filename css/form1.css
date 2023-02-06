@@ -1,9 +1,9 @@
 :root{
-    --background-header:#031701;
-    --background-form:#052407;
-    --background-body:#000000;
-    --background-input: rgba(0, 0, 0, 0.33);
-    --background-reset:#82828265;
+    --background-header:#031701 !important;
+    --background-form:#052407 !important;
+    --background-body:#000000 !important;
+    --background-input: rgba(0, 0, 0, 0.33) !important;
+    --background-reset:#82828265 !important;
 
     --border-color:#ff9500;
     --ok : #008000;
@@ -16,10 +16,10 @@
     margin: 0;
     font-family: sans-serif;
 }
-.header{
+.headerr{
     display: flex;
     justify-content: center;
-    background-color: var(--background-header);
+    background-color: var(--background-header) !important;
     padding: 10px;
     border-top-left-radius:25px;
     border-top-right-radius: 25px;
@@ -68,6 +68,15 @@ main{
 #form2{
     display: none;
 }
+
+#close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  color: #aaa;
+}
+
 .formulaire{
     display: grid;
 }

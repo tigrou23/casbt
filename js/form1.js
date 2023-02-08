@@ -11,34 +11,7 @@ $(document).ready(function() {
     formulaire();
     
 })
-function verificationPersonne(){
-    let bool=true;
-    let nom = document.getElementById('nom');
-    let prenom = document.getElementById('prenom');
-    let date = document.getElementById('date');
-    let tel = document.getElementById('tel');
-    let num = document.getElementById('num')
-    let rue = document.getElementById('rue')
-    let cp = document.getElementById('cp')
-    let ville = document.getElementById('ville')
-    if(nom.value==''||containsNumbers(nom.value)){makeRed(nom); bool= false;}
-    else{makeGreen(nom)}
-    if(prenom.value==''||containsNumbers(prenom.value)){makeRed(prenom); bool= false;}
-    else{makeGreen(prenom)}
-    if(date.value==''||dateNotExist(date.value)){makeRed(date); bool= false;}
-    else{makeGreen(date)}
-    if(tel.value==''||tel.value.length!=10||isNaN(tel.value)||document.getElementById('tel').value[0]!=0){makeRed(tel); bool= false;}
-    else{makeGreen(tel)}
-    if(num.value==''){makeRed(num); bool= false;}
-    else{makeGreen(num)}
-    if(rue.value==''||containsNumbers(rue.value)){makeRed(rue); bool= false;}
-    else{makeGreen(rue)}
-    if(cp.value==''||cp.value.length!=5||isNaN(cp.value)){makeRed(cp); bool= false;}
-    else{makeGreen(cp)}
-    if(ville.value==''||containsNumbers(ville.value)){makeRed(ville); bool= false;}
-    else{makeGreen(ville)}
-    return bool;
-}
+
 function containsNumbers(str) {
     return /\d/.test(str);
 }
@@ -60,18 +33,65 @@ function formatDate(date) {
 }
 function makeGreen(input){input.style.borderColor='greenyellow';}
 function makeRed(input){input.style.borderColor='red';}
+function passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp){
+    let prenom = prenom_tmp;
+    let nom = nom_tmp;
+    let tel = tel_tmp;
+    let num = num_tmp;
+    let rue = rue_tmp;
+    let ville = ville_tmp;
+    let cp = cp_tmp;
+}
 function submit(){
     $('#submit').on('click', function(){
-        if(verificationPersonne()){
-            prenom = prenom.value.toString()
-            nom = nom.value.toString()
-            tel = tel.value.toString()
-            num = num.value.toString()
-            rue = rue.value.toString()
-            ville = ville.value.toString()
-            cp = cp.value.toString()
-            $('#form1').css('display','none');
-            $('#form2').css('display','block');
+        let bool=true;
+        let nom_tmp = document.getElementById('nom');
+        let prenom_tmp = document.getElementById('prenom');
+        let date_tmp = document.getElementById('date');
+        let tel_tmp = document.getElementById('tel');
+        let num_tmp = document.getElementById('num')
+        let rue_tmp = document.getElementById('rue')
+        let cp_tmp = document.getElementById('cp')
+        let ville_tmp = document.getElementById('ville')
+        if(nom_tmp.value==''||containsNumbers(nom_tmp.value)){makeRed(nom_tmp); bool= false;}
+        else{makeGreen(nom_tmp)}
+        if(prenom_tmp.value==''||containsNumbers(prenom_tmp.value)){makeRed(prenom_tmp); bool= false;}
+        else{makeGreen(prenom_tmp)}
+        if(date_tmp.value==''||dateNotExist(date_tmp.value)){makeRed(date_tmp); bool= false;}
+        else{makeGreen(date_tmp)}
+        if(tel_tmp.value==''||tel_tmp.value.length!=10||isNaN(tel_tmp.value)||document.getElementById('tel').value[0]!=0){makeRed(tel_tmp); bool= false;}
+        else{makeGreen(tel_tmp)}
+        if(num_tmp.value==''){makeRed(num_tmp); bool= false;}
+        else{makeGreen(num_tmp)}
+        if(rue_tmp.value==''||containsNumbers(rue_tmp.value)){makeRed(rue_tmp); bool= false;}
+        else{makeGreen(rue_tmp)}
+        if(cp_tmp.value==''||cp_tmp.value.length!=5||isNaN(cp_tmp.value)){makeRed(cp_tmp); bool= false;}
+        else{makeGreen(cp_tmp)}
+        if(ville_tmp.value==''||containsNumbers(ville_tmp.value)){makeRed(ville_tmp); bool= false;}
+        else{makeGreen(ville_tmp)}
+        if(bool){
+            $.ajax({
+                url: "https://hugopereira.pythonanywhere.com/getPersonne/" + tel_tmp.value.toString() + "/",
+                dataType: "json",
+                success: function (result) {
+                    if(result.length == 0){
+                        prenom_tmp = prenom_tmp.value.toString()
+                        nom_tmp = nom_tmp.value.toString()
+                        tel_tmp = tel_tmp.value.toString()
+                        num_tmp = num_tmp.value.toString()
+                        rue_tmp = rue_tmp.value.toString()
+                        ville_tmp = ville_tmp.value.toString()
+                        cp_tmp = cp_tmp.value.toString()
+                        passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp)
+                        $('#form1').css('display','none');
+                        $('#form2').css('display','block');
+                    }
+                    else{
+                        alert("Ce numéro de téléphone a déjà été utilisé.")
+                    }
+
+                }
+            })
         }
     })
 

@@ -4,7 +4,6 @@ $(document).ready(function() {
     $("header").css("position","sticky");
     hauteurNav();
     $(window).resize(function() {refresh()});
-    $("button").click(function(){switchMode();});
 });
 function hauteurNav(){
     $("header").css("top", (0 - $('nav').offset().top) + "px");

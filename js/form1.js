@@ -12,6 +12,14 @@ $(document).ready(function() {
     
 })
 
+var prenom;
+var nom ;
+var tel ;
+var num ;
+var rue ;
+var ville ;
+var cp ;
+
 function containsNumbers(str) {
     return /\d/.test(str);
 }
@@ -34,13 +42,13 @@ function formatDate(date) {
 function makeGreen(input){input.style.borderColor='greenyellow';}
 function makeRed(input){input.style.borderColor='red';}
 function passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp){
-    let prenom = prenom_tmp;
-    let nom = nom_tmp;
-    let tel = tel_tmp;
-    let num = num_tmp;
-    let rue = rue_tmp;
-    let ville = ville_tmp;
-    let cp = cp_tmp;
+     prenom = prenom_tmp;
+     nom = nom_tmp;
+     tel = tel_tmp;
+     num = num_tmp;
+     rue = rue_tmp;
+     ville = ville_tmp;
+     cp = cp_tmp;
 }
 function submit(){
     $('#submit').on('click', function(){

@@ -40,6 +40,17 @@ function formatDate(date) {
         day = '0' + day;
     return [year, month, day].join('-');
 }
+function getDate(date) {
+    let d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+    return [year, month, day].join('/');
+}
 function makeGreen(input){input.style.borderColor='greenyellow';}
 function makeRed(input){input.style.borderColor='red';}
 function passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp, date_tmp){

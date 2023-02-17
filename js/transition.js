@@ -25,7 +25,7 @@ function suivant(){
                     "adresse": adresse,
                     "ville": ville,
                     "cp": cp,
-                    "date_naissance": date
+                    "date_naissance": getDate(date)
                 },
                 success: function(result){
                     console.log("Connexion réussie avec Personne")

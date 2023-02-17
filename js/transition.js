@@ -15,7 +15,6 @@ function suivant(){
         compteur++;
         if(compteur==10){
             var adresse = num + " " + rue
-            console.log(prenom, nom, tel, adresse, ville, cp)
             $.ajax({
                 url: "https://hugopereira.pythonanywhere.com/personne/",
                 dataType: "json",
@@ -25,7 +24,8 @@ function suivant(){
                     "telephone": tel,
                     "adresse": adresse,
                     "ville": ville,
-                    "cp": cp
+                    "cp": cp,
+                    "date_naissance": date
                 },
                 success: function(result){
                     console.log("Connexion réussie avec Personne")

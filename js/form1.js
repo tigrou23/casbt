@@ -19,6 +19,7 @@ var num ;
 var rue ;
 var ville ;
 var cp ;
+var date;
 
 function containsNumbers(str) {
     return /\d/.test(str);
@@ -41,7 +42,7 @@ function formatDate(date) {
 }
 function makeGreen(input){input.style.borderColor='greenyellow';}
 function makeRed(input){input.style.borderColor='red';}
-function passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp){
+function passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp, date_tmp){
      prenom = prenom_tmp;
      nom = nom_tmp;
      tel = tel_tmp;
@@ -49,6 +50,7 @@ function passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville
      rue = rue_tmp;
      ville = ville_tmp;
      cp = cp_tmp;
+     date = date_tmp
 }
 function submit(){
     $('#submit').on('click', function(){
@@ -90,7 +92,8 @@ function submit(){
                         rue_tmp = rue_tmp.value.toString()
                         ville_tmp = ville_tmp.value.toString()
                         cp_tmp = cp_tmp.value.toString()
-                        passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp)
+                        date_tmp = date_tmp.value.toString()
+                        passerInformation(prenom_tmp, nom_tmp, tel_tmp, num_tmp, rue_tmp, ville_tmp, cp_tmp, date_tmp)
                         $('#form1').css('display','none');
                         $('#form2').css('display','block');
                     }
